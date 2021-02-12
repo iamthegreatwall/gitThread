@@ -1,0 +1,88 @@
+/*以下为编译的警告信息*/
+
+firstThread.c: In function 'print_hello_world':
+firstThread.c:10:46: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   10 |   printf("Hello World.Greetings from thread %d\n",tid);
+      |                                             ~^    ~~~
+      |                                              |    |
+      |                                              int  void *
+      |                                             %p
+firstThread.c: In function 'main':
+firstThread.c:22:62: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   22 |     status=pthread_create(&threads[i],NULL,print_hello_world,(void *)i);
+      |                                                              ^
+
+/*以下为第一次执行程序的结果*/
+Main here.Creating thread 0
+Main here.Creating thread 1
+Hello World.Greetings from thread 0
+Main here.Creating thread 2
+Hello World.Greetings from thread 1
+Main here.Creating thread 3
+Hello World.Greetings from thread 2
+Main here.Creating thread 4
+Main here.Creating thread 5
+Hello World.Greetings from thread 4
+Hello World.Greetings from thread 3
+Hello World.Greetings from thread 5
+Main here.Creating thread 6
+Main here.Creating thread 7
+Hello World.Greetings from thread 6
+Hello World.Greetings from thread 7
+Main here.Creating thread 8
+Main here.Creating thread 9
+
+/*以下为第二次执行结果*/
+Main here.Creating thread 0
+Main here.Creating thread 1
+Hello World.Greetings from thread 0
+Main here.Creating thread 2
+Hello World.Greetings from thread 1
+Main here.Creating thread 3
+Hello World.Greetings from thread 2
+Main here.Creating thread 4
+Hello World.Greetings from thread 3
+Hello World.Greetings from thread 4
+Main here.Creating thread 5
+Main here.Creating thread 6
+Hello World.Greetings from thread 5
+Main here.Creating thread 7
+Hello World.Greetings from thread 6
+Hello World.Greetings from thread 7
+Main here.Creating thread 8
+Main here.Creating thread 9
+Hello World.Greetings from thread 8
+
+
+/*以下为第二种程序的执行结果*/
+secondThread.c: In function 'print_hello_world':
+secondThread.c:10:46: warning: format '%d' expects argument of type 'int', but argument 2 has type 'void *' [-Wformat=]
+   10 |   printf("Hello World.Greetings from thread %d\n",tid);
+      |                                             ~^    ~~~
+      |                                              |    |
+      |                                              int  void *
+      |                                             %p
+secondThread.c: In function 'main':
+secondThread.c:23:62: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   23 |     status=pthread_create(&threads[i],NULL,print_hello_world,(void *)i);
+      |                                                              ^
+Main here.Creating thread 0
+Hello World.Greetings from thread 0
+Main here.Creating thread 1
+Hello World.Greetings from thread 1
+Main here.Creating thread 2
+Hello World.Greetings from thread 2
+Main here.Creating thread 3
+Hello World.Greetings from thread 3
+Main here.Creating thread 4
+Hello World.Greetings from thread 4
+Main here.Creating thread 5
+Hello World.Greetings from thread 5
+Main here.Creating thread 6
+Hello World.Greetings from thread 6
+Main here.Creating thread 7
+Hello World.Greetings from thread 7
+Main here.Creating thread 8
+Hello World.Greetings from thread 8
+Main here.Creating thread 9
+Hello World.Greetings from thread 9
