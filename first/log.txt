@@ -66,6 +66,8 @@ secondThread.c: In function 'main':
 secondThread.c:23:62: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
    23 |     status=pthread_create(&threads[i],NULL,print_hello_world,(void *)i);
       |                                                              ^
+
+/*可以看出线程在执行完之前下一个线程会被阻塞*/
 Main here.Creating thread 0
 Hello World.Greetings from thread 0
 Main here.Creating thread 1
